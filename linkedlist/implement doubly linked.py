@@ -1,12 +1,12 @@
 #adding a previous node
 
-class Node():
+class Node:
     def __init__(self, data):
         self.value = data
         self.next = None
         self.previous = None
 
-class DoublyLinkedList():
+class DoublyLinkedList:
     def __init__(self):
         self.head = None
         self.tail = None
