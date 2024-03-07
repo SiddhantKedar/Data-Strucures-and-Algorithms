@@ -130,7 +130,21 @@ class BinarySearchTree:
                 if current_node.right:
                     queue.append(current_node.right)
             return bfs_result
-            
+        
+    def BFS_recursive(self,queue, bfs_list):
+        if self.root == None:
+            return "Tree is empty"
+        if len(queue) == 0:
+            return bfs_list
+        current_node = queue.pop(0)
+        bfs_list.append(current_node.data)
+        if current_node.left:
+            queue.append(current_node.left)
+        if current_node.right:
+            queue.append(current_node.right)
+        return self.BFS_recursive(queue, bfs_list)
+        
+        
 tree = BinarySearchTree()
 
 tree.insert(5)
@@ -151,6 +165,7 @@ print("Current Length:",tree.no_of_nodes)
 '''
 
 print(tree.BFS())  
+print(tree.BFS_recursive([tree.root], []))
 '''
 [5, 3, 7, 1, 13, 0, 10, 65]
 '''
