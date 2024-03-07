@@ -28,8 +28,8 @@ class BinarySearchTree:
                         current_node.left = new_node
                     else:
                         current_node = current_node.left
-                self.no_of_nodes += 1
-                return
+            self.no_of_nodes += 1
+            return
             
     def search(self, data):
         if self.root == None:
